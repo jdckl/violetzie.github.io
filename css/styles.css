@@ -13,12 +13,11 @@ h1{
 }
 
 .full svg{
-  position: absolute;
+  position: fixed;
   z-index:0;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 1000px;
   fill: #0458a6;
   stroke-width: 0;
 }
