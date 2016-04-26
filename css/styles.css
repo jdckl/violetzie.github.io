@@ -15,10 +15,11 @@ h1{
 .full svg{
   position: fixed;
   z-index:0;
-  top: 50%;
+  top: 75%;
   left: 50%;
-  transform: translateX(-50%), translateY(-50%);
-  width: 1000px;
+  transform: translateX(-50%) translateY(-50%);
+  width: 2000px;
+  height: 2000px;
   fill: #0458a6;
   stroke-width: 0;
 }
