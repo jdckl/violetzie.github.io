@@ -1,6 +1,7 @@
 $( document ).ready(function() {
 var a = document.getElementById("svgbg");
 var svgmain = $("#svgmain");
+var selectedPerson = 0;
 
 $("#scrolldown").click(function() {
   $.fn.fullpage.moveSectionDown();
@@ -232,8 +233,7 @@ function findId(people, theid) {
 
   biocolumn.html("");
 
-  var selectedPerson = categoryArray[peopleMap[theid]];
-  console.log(categoryArray[peopleMap[theid]]);
+  selectedPerson = categoryArray[peopleMap[theid]];
   var currentID = peopleMap[theid];
 
     console.log(currentID);
