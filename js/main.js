@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 var a = document.getElementById("svgbg");
-var b = document.getElementById("svgmain");
+var svgmain = $("#svgmain");
 
 $("#scrolldown").click(function() {
   $.fn.fullpage.moveSectionDown();
@@ -208,64 +208,82 @@ var people = {
     ]
 }
 
-function findId(people, theid) {
-    var categoryArray = people.category;
-    for (var i = 0; i < categoryArray.length; i++) {
-        if (categoryArray[i].id == theid) {
+var biocolumn = $( "#biocolumn" );
+var peoplebio = $( "#peoplebio" );
+var nextbutt = $("#next");
+var prevbutt = $("#prev");
 
-            var svgbg = (categoryArray[i].svg);
-            var bio = (categoryArray[i].bio);
-            var bgcolor = (categoryArray[i].bgcolor);
-            var fillcolor = (categoryArray[i].color);
-            var url = (categoryArray[i].url);
-            var name = (categoryArray[i].name);
+var categoryArray = people.category;
+var peopleMap = {};
+
+for (var i = 0; i < categoryArray.length; i++){
+ peopleMap[categoryArray[i].id] = i;
+}
+
+$("#back").click(function() {
+  peoplebio.css("opacity", 0).css("z-index", -99);
+  $.fn.fullpage.setAllowScrolling(true);
+  biocolumn.html("");
+});
+
+console.log(peopleMap);
+
+function findId(people, theid) {
+
+  var selectedPerson = categoryArray[peopleMap[theid]];
+  var currentID = peopleMap[theid];
+
+    console.log(currentID);
+
+            var svgbg = selectedPerson.svg;
+            var bio = selectedPerson.bio;
+            var bgcolor = selectedPerson.bgcolor;
+            var fillcolor = selectedPerson.color;
+            var url = selectedPerson.url;
+            var name = selectedPerson.name;
 
             var structure = '';
             structure += '<h2 class="bioname">' + name + '</h2>';
             structure += '<p class="biotext">' + bio + '</p>';
             structure += '<a href="http://' + url + '/" class="biourl" target="_blank">' + url + '</a>';
-            $( "#biocolumn" ).html(structure);
+            biocolumn.html(structure);
 
-            if ( $("#peoplebio").css('opacity') == '0' ){
-              $( "#peoplebio" ).css("opacity", 1).css("z-index", 99);
+            if ( peoplebio.css('opacity') == '0' ){
+              peoplebio.css("opacity", 1).css("z-index", 99);
               $.fn.fullpage.setAllowScrolling(false);
             }
 
-            $("#prev").css("background", fillcolor);
-            $("#next").css("background", fillcolor);
-            $( "#peoplebio" ).css("background", bgcolor);
-            $( "#svgmain" ).attr("data", "svg/"+ svgbg +"");
+            prevbutt.css("background", fillcolor);
+            nextbutt.css("background", fillcolor);
+            peoplebio.css("background", bgcolor);
+            svgmain.attr("data", "svg/"+ svgbg +"");
 
-            b.addEventListener("load",function(){
-            var svgDoc = b.contentDocument;
-            var svgfill = $(svgDoc).find("svg");
-            $(svgfill).attr("fill", fillcolor).attr("stroke", fillcolor);
-            },false);
+            svgmain.on("load",function(){
+              var svgDoc = svgmain.contents();
+              var svgfill = $(svgDoc).find("svg");
+              $(svgfill).attr("fill", fillcolor).attr("stroke", fillcolor);
+              svgmain.off("load");
+            });
 
-            var prev = categoryArray[i - 1];
-            var next = categoryArray[i + 1];
+            nextbutt.click(function() {
+              var next = currentID + 1;
+              var gonext = peopleMap[next].id;
+              console.log(gonext);
+              if (next != 31){
+              biocolumn.html("");
+              findId(people, gonext);
+              }
+            });
 
-        }
-    }
-    $("#next").click(function() {
-      if (categoryArray[i] != 31){
-      $( "#biocolumn" ).html("");
-      findId(people, next.id);
-      }
-    });
+            prevbutt.click(function() {
+              var prev = currentID - 1;
+              var goprev = peopleMap[prev].id;
+              if (prev != 0){
+              biocolumn.html("");
+              findId(people, goprev);
+              }
+            });
 
-    $("#prev").click(function() {
-      if (categoryArray[i] != 0){
-      $( "#biocolumn" ).html("");
-      findId(people, prev.id);
-      }
-    });
-
-    $("#back").click(function() {
-      $( "#peoplebio" ).css("opacity", 0).css("z-index", -99);
-      $.fn.fullpage.setAllowScrolling(true);
-      $( "#biocolumn" ).html("");
-    });
 }
 
 function findSVG(people, theid) {
