@@ -2,6 +2,7 @@ $( document ).ready(function() {
 var a = document.getElementById("svgbg");
 var svgmain = $("#svgmain");
 var selectedPerson = 0;
+var currentID = null;
 
 $("#scrolldown").click(function() {
   $.fn.fullpage.moveSectionDown();
@@ -225,6 +226,7 @@ $("#back").click(function() {
   peoplebio.css("opacity", 0).css("z-index", -99);
   $.fn.fullpage.setAllowScrolling(true);
   biocolumn.html("");
+  currentID = null;
 });
 
 console.log(peopleMap);
@@ -234,7 +236,7 @@ function findId(people, theid) {
   biocolumn.html("");
 
   selectedPerson = categoryArray[peopleMap[theid]];
-  var currentID = peopleMap[theid];
+  currentID = peopleMap[theid];
 
     console.log(currentID);
 
