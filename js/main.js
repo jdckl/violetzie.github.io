@@ -230,7 +230,10 @@ console.log(peopleMap);
 
 function findId(people, theid) {
 
+  biocolumn.html("");
+
   var selectedPerson = categoryArray[peopleMap[theid]];
+  console.log(categoryArray[peopleMap[theid]]);
   var currentID = peopleMap[theid];
 
     console.log(currentID);
@@ -266,22 +269,17 @@ function findId(people, theid) {
             });
 
             nextbutt.click(function() {
-              var next = currentID + 1;
-              var gonext = peopleMap[next].id;
-              console.log(gonext);
-              if (next != 31){
-              biocolumn.html("");
-              findId(people, gonext);
+              if (currentID < categoryArray.length - 1) {
+                  currentID = currentID + 1;
+                  findId(people, currentID);
               }
             });
 
             prevbutt.click(function() {
-              var prev = currentID - 1;
-              var goprev = peopleMap[prev].id;
-              if (prev != 0){
-              biocolumn.html("");
-              findId(people, goprev);
-              }
+              if (currentID > 0) {
+                  currentID = currentID - 1;
+                  findId(people, currentID);
+                  }
             });
 
 }
