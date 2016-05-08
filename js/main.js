@@ -1,5 +1,9 @@
 $(document).ready(function () {
+<<<<<<< HEAD
     var svghover = $("#svgbg");
+=======
+    var a = document.getElementById("svgbg");
+>>>>>>> origin/master
     var svgmain = $("#svgmain");
     var selectedPerson = 0;
     var currentIndex = null;
@@ -11,7 +15,11 @@ $(document).ready(function () {
 
     var firstbg = ["#ffed00", "#0458a6", "#f5b4b2", "#8a9224"];
     var random = firstbg[Math.floor(firstbg.length * Math.random())];
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> origin/master
     $("#first").css("background", random);
 
     var people = [
@@ -207,6 +215,7 @@ $(document).ready(function () {
     function findId(theid) {
 
         biocolumn.html("");
+<<<<<<< HEAD
 
         currentIndex = peopleMap[theid];
 
@@ -258,6 +267,60 @@ $(document).ready(function () {
                     $(svgfill).attr("fill", fillcolor).attr("stroke", fillcolor);
                     svghover.off("load");
                 });
+=======
+        
+        currentIndex = peopleMap[theid];
+
+        selectedPerson = people[currentIndex];
+
+        console.log(currentIndex, theid, peopleMap, people);
+
+        var svgbg = selectedPerson.svg;
+        var bio = selectedPerson.bio;
+        var bgcolor = selectedPerson.bgcolor;
+        var fillcolor = selectedPerson.color;
+        var url = selectedPerson.url;
+        var name = selectedPerson.name;
+
+        var structure = '';
+        structure += '<h2 class="bioname">' + name + '</h2>';
+        structure += '<p class="biotext">' + bio + '</p>';
+        structure += '<a href="http://' + url + '/" class="biourl" target="_blank">' + url + '</a>';
+        biocolumn.html(structure);
+
+        if (peoplebio.css('opacity') == '0') {
+            peoplebio.css("opacity", 1).css("z-index", 99);
+            $.fn.fullpage.setAllowScrolling(false);
+        }
+
+        prevbutt.css("background", fillcolor);
+        nextbutt.css("background", fillcolor);
+        peoplebio.css("background", bgcolor);
+        svgmain.attr("data", "svg/" + svgbg + "");
+
+        svgmain.on("load", function () {
+            var svgDoc = svgmain.contents();
+            var svgfill = $(svgDoc).find("svg");
+            $(svgfill).attr("fill", fillcolor).attr("stroke", fillcolor);
+            svgmain.off("load");
+        });
+    }
+
+    function findSVG(theid) {
+        for (var i = 0; i < people.length; i++) {
+            if (people[i].id == theid) {
+                var svgbg = (people[i].svg);
+                $(".svgbg").attr('data', 'svg/' + svgbg + '');
+                var fillcolor = (people[i].color);
+
+                a.addEventListener("load", function () {
+                    var svgDoc = a.contentDocument;
+                    var svgfill = $(svgDoc).find("svg");
+                    $(svgfill).attr("fill", fillcolor);
+                    $(svgfill).attr("stroke", fillcolor);
+
+                }, false);
+>>>>>>> origin/master
             }
         }
     }
@@ -268,6 +331,7 @@ $(document).ready(function () {
             findId(people[currentIndex].id);
         }
     });
+<<<<<<< HEAD
 
     prevbutt.click(function () {
         if (currentIndex > 0) {
@@ -276,6 +340,16 @@ $(document).ready(function () {
         }
     });
 
+=======
+
+    prevbutt.click(function () {
+        if (currentIndex > 0) {
+            currentIndex = currentIndex - 1;
+            findId(people[currentIndex].id);
+        }
+    });
+    
+>>>>>>> origin/master
     $("#scrolldown").click(function () {
         $.fn.fullpage.moveSectionDown();
     });
