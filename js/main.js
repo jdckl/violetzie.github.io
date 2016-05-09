@@ -395,8 +395,7 @@ $(document).ready(function () {
         css3: true,
         easingcss3: 'ease-out',
         paddingBottom: '20px',
-        scrollOverflow: true,
-        responsiveWidth '800'
+        scrollOverflow: true
     });
 
     $("#back").click(function () {
@@ -424,15 +423,15 @@ $(document).ready(function () {
         }
     );
 
-    $( "#peoplebio" ).on( "swipeleft", swipeleftHandler );
-    $( "#peoplebio" ).on( "swipeleft", swiperightHandler );
+    peoplebio.on( "swipeleft", swipeleftHandler );
+    peoplebio.on( "swiperight", swiperightHandler );
 
     function swipeleftHandler( event ){
-      $("#next").click();
+      nextbutt.click();
 }
 
     function swiperightHandler( event ){
-      $("#prev").click();
+      prevbutt.click();
 }
 
 });
