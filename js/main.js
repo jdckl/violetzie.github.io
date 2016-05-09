@@ -395,7 +395,8 @@ $(document).ready(function () {
         css3: true,
         easingcss3: 'ease-out',
         paddingBottom: '20px',
-        scrollOverflow: true
+        scrollOverflow: true,
+        responsiveWidth '800'
     });
 
     $("#back").click(function () {
