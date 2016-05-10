@@ -126,7 +126,7 @@ $(document).ready(function () {
         {
             id: "gerry",
             svg: "Gerry.svg",
-            name: "GERONIMO LABRADORA",
+            name: "GERALD LABRADORA",
             bio: "With a background in areas of cultural anthropology as well as intercultural + visual communication, falling into the graphic design industry is an unexpected but fitting ending. After having spent time working in environmental design, packaging design, and advertising, my personal development has become an ever-growing adventure, one that can hopefully lead to fully understanding the abstraction and interpretation of reality through art.",
             color: "#ffffff",
             bgcolor: "#0458a6",
