@@ -297,6 +297,14 @@ section{width:100%; height: 100vh !important;}
   .slimScrollDiv{position: inherit !important;}
 }
 
+@media only screen and (min-width: 1301px) {
+  #scrolldown{display: block;}
+}
+
+@media only screen and (max-width: 979px) {
+  #scrolldown{display: block;}
+}
+
 @media only screen and (min-width: 980px) {
   #scrolldown{display: none;}
 }
