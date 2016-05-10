@@ -115,9 +115,6 @@ a:hover{
   border-bottom: 4px black solid;
 }
 
-#intro{
-}
-
 #main{
   max-width: 100%;
   margin: 0px;
@@ -286,17 +283,17 @@ section{width:100%; height: 100vh !important;}
 
 .slimScrollBar{opacity: 0.1 !important;}
 
-@media screen and (max-width: 1400px) {
+@media only screen and (max-width: 1400px) {
   #container{justify-content: center;align-content: flex-start;}
 
 }
 
-@media screen and (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
   #container{justify-content: center;align-content: flex-start;}
   .personlink{margin: 1.1em; font-size: 1.5em; width: 10%;}
 }
 
-@media screen and (min-width: 1000px) {
+@media only screen and (min-width: 1000px) {
   .slimScrollDiv{position: inherit !important;}
 }
 
@@ -315,7 +312,7 @@ section{width:100%; height: 100vh !important;}
   .lastinfo h2{font-size: 3rem !important;}
 }
 
-@media screen and (max-width: 980px) {
+@media only screen and (max-width: 980px) {
   .full h1{
     font-size: 5em !important;
     text-align: center;
@@ -350,29 +347,29 @@ section{width:100%; height: 100vh !important;}
   #container{margin: 0 auto;}
 }
 
-@media screen and (max-width: 925px) {
+@media only screen and (max-width: 925px) {
   #showinfo{width: 33.3%; text-align: center; margin: 0 !important;}
   #showinfotwo{width: 33.3%; text-align: center; margin: 0 !important;}
   #showinfothree{width: 33.3%; text-align: center; margin: 0 !important;}
   #scrollup{display: none;}
 }
 
-@media screen and (max-width: 762px) {
+@media only screen and (max-width: 762px) {
 .personlink{width: 24%;}
 }
 
-@media screen and (max-width: 702px) {
+@media only screen and (max-width: 702px) {
     .lastinfo #container{flex-direction: column;}
   #showinfo{width: 100%;}
   #showinfotwo{width: 100%;}
   #showinfothree{width: 100%;}
 }
 
-@media screen and (max-width: 682px) {
+@media only screen and (max-width: 682px) {
 .personlink{width: 23%;}
 }
 
-@media screen and (max-width: 652px) {
+@media only screen and (max-width: 652px) {
   #intro h2{font-size: 1.5em;}
   .full h1{
     font-size: 4em !important;
@@ -383,27 +380,27 @@ section{width:100%; height: 100vh !important;}
 
 }
 
-@media screen and (max-width: 618px) {
+@media only screen and (max-width: 618px) {
 .personlink{width: 22%;}
 }
 
-@media screen and (max-width: 565px) {
+@media only screen and (max-width: 565px) {
 .personlink{width: 20%;}
 }
 
-@media screen and (max-height: 540px) {
+@media only screen and (max-height: 540px) {
 
 #scrolldown{display: none;}
 }
 
-@media screen and (max-width: 640px) {
+@media only screen and (max-width: 640px) {
   #showbio{width: 90%; max-width: 100% !important;}
   #scrolldown{font-size: 2em;}
     .biotext{max-width: 80%;}
     .bioname{font-size: 3.5rem;}
 }
 
-@media screen and (max-width: 530px) {
+@media only screen and (max-width: 530px) {
   #intro h2{font-size: 1.4em;}
   .full h1{
     font-size: 3.5em !important;
@@ -413,7 +410,7 @@ section{width:100%; height: 100vh !important;}
 
 }
 
-@media screen and (max-width: 510px) {
+@media only screen and (max-width: 510px) {
   #intro h2{font-size: 1.3em;}
   .full h1{
     font-size: 3.5em !important;
@@ -422,7 +419,7 @@ section{width:100%; height: 100vh !important;}
 
 }
 
-@media screen and (max-width: 480px) {
+@media only screen and (max-width: 480px) {
   .peoplecontainer{height: auto; align-content: none; display: flex !important;}
   .personlink{width: 100%; margin: 0 !important;}
   #peoplebio{display: flex !important;}
@@ -441,7 +438,7 @@ section{width:100%; height: 100vh !important;}
 
 }
 
-@media screen and (max-width: 475px) {
+@media only screen and (max-width: 475px) {
   #intro h2{font-size: 1.2em;}
   .full h1{
     font-size: 3.3em !important;
@@ -451,7 +448,7 @@ section{width:100%; height: 100vh !important;}
 
 }
 
-@media screen and (max-width: 445px) {
+@media only screen and (max-width: 445px) {
   #intro h2{font-size: 1.1em;}
   .full h1{
     font-size: 3.1em !important;
@@ -460,7 +457,7 @@ section{width:100%; height: 100vh !important;}
 
 }
 
-@media screen and (max-width: 410px) {
+@media only screen and (max-width: 410px) {
   #showbio{font-size: 1.3em;}
     #showbio h2{font-size: 3.5rem;}
       #intro h2{font-size: 1em;}
@@ -468,7 +465,7 @@ section{width:100%; height: 100vh !important;}
 
 }
 
-@media screen and (max-width: 375px) {
+@media only screen and (max-width: 375px) {
   #intro h2{display: none !important;}
   .full h1{
     font-size: 2.5em !important;
