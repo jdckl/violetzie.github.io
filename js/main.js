@@ -103,7 +103,7 @@ $(document).ready(function () {
             bio: "I always loved photography as a passion, but this gave me the chance of going further. Create my exhibition, and show my style in world of photography.",
             color: "#8a9224",
             bgcolor: "#0458a6",
-            url: "www.edwardfoster.tumblr.com/"
+            url: "www.edwardfoster.tumblr.com"
         },
         {
             id: "enab",
@@ -112,7 +112,7 @@ $(document).ready(function () {
             bio: "Everyday we are influenced by visual impressions. They have a great influence on our daily life. Signs guid us our way and poster tell us what's going on. To name just a few. As graphic designers we have the possibility to take part of the visual appearance of our surrounding.",
             color: "#f5b4b2",
             bgcolor: "#ffffff",
-            url: "www.cargocollective.com/verenabrohl"
+            url: "www.verenabrohl.com"
         },
         {
             id: "evdokia",
